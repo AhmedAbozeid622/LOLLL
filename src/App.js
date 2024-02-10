@@ -1,22 +1,30 @@
 import './App.css';
-import Feed from './Feed';
-import Sidebar from './Sidebar';
-import Widget from './Widget';
-import { useState , useEffect } from 'react';
-import db from './firebase';
+import Signup from './Signup';
+import Login from './Login';
+import Home from './Home';
+import { BrowserRouter , Route ,Routes , Link } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="app">
-      {/* Sidebar */}
-         <Sidebar />
 
-      {/* Feed */}
+        <BrowserRouter>
 
-         <Feed />
-      {/* Widgets */}
+        <Link to='/' />
+        <Link to='/Signup' />
+        <Link to='/Login' />
 
-         <Widget />
+
+        <Routes>
+
+        <Route path='/' element={<Home />} />
+        <Route path='/Signup' element={<Signup />} />
+        <Route path='/Login' element={<Login />} />
+          
+        </Routes>
+        </BrowserRouter>
+
     </div>
   );
 }

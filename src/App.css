@@ -4,7 +4,7 @@
   max-width: 1300px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0px 10px;
+  padding: 0px 10px; 
 }
 
 .sidebar{
@@ -13,7 +13,7 @@
   min-width: 250px;
   margin-top: 20px;
   padding-right: 20px;
-  padding-left: 20px;
+  padding-left: 20px; 
 }
 .sidebar__twitterIcon{
   color: #50b7f5 !important;
@@ -67,6 +67,22 @@
 
 
 
+/**/
+/**/
+/**/
+/**/
+/**/
+.burger::-webkit-scrollbar {
+  display: none;
+}
+/**/
+/**/
+/**/
+/**/
+/**/
+
+
+
 
 
 .feed::-webkit-scrollbar {
@@ -78,9 +94,9 @@
   border-right: 1px solid #e8f5fe ;
   overflow-y: scroll;
   min-width: fit-content;
-
   -ms-overflow-style: none;
   scrollbar-width: none;
+  
 }
 .feed__header{
   position: sticky;
@@ -88,12 +104,17 @@
   background-color: white;
   z-index: 100;
   border: 1px solid #e8f5fe ;
-  padding: 15px 20px;
+  padding: 10px 20px;
+  display: flex ;
+  justify-content: space-between;
 }
 .feed__header h2{
   font-size: 20px;
   font-weight: 800;
-
+}
+.feed__header .MuiSvgIcon-root{
+ font-size: 40px;
+ color: #50b7f5;
 }
 
 
@@ -216,6 +237,101 @@
 .post img{
   width: 500px;
 }
+.post__headertext{
+  display: flex;
+  justify-content: space-between;
+}
+.post__headertext button{
+  border: none;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+}
+.post__headertext .MuiSvgIcon-root{
+ padding: 5px;
+ font-size: 20px;
+}
+
+
+.sign{
+  margin: auto;
+  text-align: center;
+/* background-image: url(C:\Users\ahmed\twitter-clone\public\img3.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+.sign .name{
+  display: flex;
+  padding: 20px ;
+  gap: 30px;
+  width: 120;
+  height: 25px;
+}
+.sign .email{
+  width: 360px;
+  height: 25px;
+}
+.sign .MuiSvgIcon-root{
+  color: #50b7f5;
+  font-size: 40px;
+}
+.sign .button{
+  padding: 5px 15px;
+  background-color: #e8f5fe;
+  border: 1px solid #50b7f5;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0px 0px 10px #50b7f5;
+  text-shadow: 0px 0px 1px black ;
+}
+
+.sign .button:hover{
+  background-color: #50b7f5;
+}
+.sign fieldset{
+  border: 1px solid white ;
+  box-shadow: 0px 0px 20px #50b7f5;
+}
+/* .sign legend{
+  font-size: 20px;
+  border: 1px solid #50b7f5;
+} */
+
+
+
+
+
+
+.sign .logo{
+  width: 250px;
+  height: 25px;
+}
+.sign .check{
+  display: flex;
+  justify-content: space-between;
+}
+.sign .field{
+  padding: 50px 30px;
+}
+.sign .buto{
+  width: 150px;
+  height: 35px;
+}
+.sign a{
+  text-decoration: none;
+}
+.sign a:hover{
+  border-bottom: 1px solid black ;
+}
+
+
+/* max-w-screen-sm */
+
+@media (max-width: 640px) {
+
+
+
+}
 
 
 
@@ -223,3 +339,113 @@
 
 
 
+/* max-w-screen-md */
+
+@media (max-width: 768px) {
+  .post__body img{
+    width: 260px;
+  }
+  .post{
+    overflow-x: hidden;
+  }
+  .feed{
+    overflow-x: hidden;
+  } 
+  body{
+    overflow-x: hidden;
+  }
+  .sidebar{
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 1024px) {
+
+  .post__body img{
+    width: 260px;
+  }
+  
+  body{
+    overflow-x: hidden;
+  }
+  .sidebar{
+    border-right: 1px solid  #e8f5fe;
+    min-width: 200px;
+    margin-top: 20px;
+    padding-right: 20px;
+    padding-left: 0px; 
+  }
+  .widget{
+width:auto ;
+  }
+  .sidbar0ption h2{
+    font-weight: 800;
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  .widget__input{
+    display: flex;
+    align-items: center;
+    background-color: #e8f5fe;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+}
+
+
+/* max-w-screen-lg */
+
+@media (min-width:768px) and (max-width: 960px) {
+
+  .post__body img{
+    width: 350px;
+  }
+  
+  body{
+    overflow-x: hidden;
+  }
+  .widget__input{
+    display: flex;
+    align-items: center;
+    background-color: #e8f5fe;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  .sidebar{
+    display: none;
+  }
+}
+
+
+
+
+
+
+/* max-w-screen-xl */
+
+@media (min-width:1024px) and (max-width: 1275px){
+
+  .post__body img{
+    width: 300px;
+  }
+  body{
+    overflow-x: hidden;
+  }
+  .sidbar0ption h2{
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 20px;
+  }
+}
+@media (min-width:960px){
+  .feed__header .MuiSvgIcon-root{
+    display: none;
+  }
+
+}

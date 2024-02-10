@@ -1,7 +1,8 @@
 import React from 'react'
 import './App.css';
 import { Avatar } from '@mui/material';
-import { ChatBubbleOutlineSharp, FavoriteBorderSharp, PublishSharp, RepeatSharp, VerifiedUserSharp } from '@mui/icons-material';
+import { ChatBubbleOutlineSharp, FavoriteBorderSharp, Height, PublishSharp, RepeatSharp, VerifiedUserSharp } from '@mui/icons-material';
+import ClearIcon from '@mui/icons-material/Clear';
 
 const Post = ({    displayName,    username,    verified,    text,    image,    avatar}) => {
   return (
@@ -12,12 +13,18 @@ const Post = ({    displayName,    username,    verified,    text,    image,    
         <div className="post__body">
             <div className="post__header">
                 <div className="post__headertext">
-                    <h3>
+                   <div>
+                     <h3>
                         {displayName} <span className='post__headerspecial'> 
                             {verified && <VerifiedUserSharp className='post__badge' />}@{username}
                             </span>
-                    </h3>
-                </div>
+                          
+                     </h3>
+                    </div>
+                    <div>
+                    <button><ClearIcon /></button>
+                    </div>
+                 </div>
                 <div className="post__headerdesc">
                     <p>{text}</p>
                 </div>
@@ -35,3 +42,6 @@ const Post = ({    displayName,    username,    verified,    text,    image,    
 }
 
 export default Post
+
+
+

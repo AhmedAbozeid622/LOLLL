@@ -23,9 +23,15 @@ const Feed = ({Icon , text }) => {
 
     // if you call unsub() it will stop the listener
     const unsub = onSnapshot(q, (querySnapshot) => {
-      setPosts(querySnapshot.docs.map((doc) => doc.data()))
+      setPosts(querySnapshot.docs.map(
+        (doc) => {
+          // console.log({data: doc.data() , id: doc.id})
+          return {data: doc.data() , id: doc.id};
+        } 
+        ))
       // console.log("I am listening to the database 🤞")
     });
+    
   }, []);
   return (
     <div className='feed'>
@@ -53,12 +59,13 @@ const Feed = ({Icon , text }) => {
 
       {posts.map(post =>(
         <Post
-         displayName={post.displayName}
-         username={post.username}
-         verified={post.verified}
-         text={post.text}
-         avatar={post.avatar}
-         image={post.image}
+         displayName={post.data.displayName}
+         username={post.data.username}
+         verified={post.data.verified}
+         text={post.data.text}
+         avatar={post.data.avatar}
+         image={post.data.image}
+         id={post.id}
         />
       ))}
     </div>

@@ -3,8 +3,19 @@ import './App.css';
 import { Avatar } from '@mui/material';
 import { ChatBubbleOutlineSharp, FavoriteBorderSharp, Height, PublishSharp, RepeatSharp, VerifiedUserSharp } from '@mui/icons-material';
 import ClearIcon from '@mui/icons-material/Clear';
+import {collection, deleteDoc, doc,  query} from "firebase/firestore"; 
+import  db  from './firebase';
+ 
 
-const Post = ({    displayName,    username,    verified,    text,    image,    avatar}) => {
+let delete_tweet = async (id) => {
+    const docRef = query(doc(db, "posts", id));
+    await deleteDoc(docRef)
+    .then(() => { console.log("Entire Document has been deleted successfully.") }) 
+    .catch(error => { console.log(error); })
+
+}
+
+const Post = ({    displayName,    username,    verified,    text,    image,    avatar  , id}) => {
   return (
     <div className='post'>
         <div className="post__avatar">
@@ -22,7 +33,7 @@ const Post = ({    displayName,    username,    verified,    text,    image,    
                      </h3>
                     </div>
                     <div>
-                    <button><ClearIcon /></button>
+                    <button onClick={() => delete_tweet(id)}><ClearIcon /></button>
                     </div>
                  </div>
                 <div className="post__headerdesc">
